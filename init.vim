@@ -66,7 +66,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-neotest/neotest'
   Plug 'olimorris/neotest-rspec'
   Plug 'tpope/vim-commentary'
-  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rails'
@@ -105,8 +104,13 @@ set expandtab
 set tabstop=2 
 set incsearch
 set hlsearch
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
+" Enable blinking together with different cursor shapes for insert/command mode, and cursor highlighting:
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+\,sm:block-blinkwait175-blinkoff150-blinkon175
+
 highlight CursorLine ctermbg=235 guibg=#28303d
 highlight CursorColumn ctermbg=122 guibg=#28303d
 set nu "Отображать номеe астрок
@@ -507,7 +511,6 @@ require("neotest").setup({
   },
 })
 EOF
-
 
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
