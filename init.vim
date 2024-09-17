@@ -512,6 +512,7 @@ require("neotest").setup({
 })
 EOF
 
+
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
 endif
@@ -547,7 +548,10 @@ let g:rainbow_conf = {
 \ }
 \}
 
+au FocusGained,BufEnter * :checktime
+
 let g:rainbow_active = 1
+let NERDTreeShowHidden = 1
 
 autocmd VimEnter * NERDTree
 
