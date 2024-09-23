@@ -161,7 +161,8 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 
 "mappings
-map <Leader>e :NERDTreeToggle<CR>
+"map <Leader>e :NERDTreeToggle<CR>
+nmap <F6> :NERDTreeToggle<CR>
 map <silent> <C-h> :call WinMove('h')<CR>
 map <silent> <C-j> :call WinMove('j')<CR>
 map <silent> <C-k> :call WinMove('k')<CR>
