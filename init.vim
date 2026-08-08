@@ -11,10 +11,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'Shougo/neosnippet.vim'
-  Plug 'SirVer/ultisnips'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'lewis6991/gitsigns.nvim'
-  Plug 'vim-scripts/VimCompletesMe'
   Plug 'alvan/vim-closetag'
   Plug 'ap/vim-css-color'
   Plug 'bfredl/nvim-miniyank'
@@ -25,7 +23,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'ekalinin/dockerfile.vim'
   Plug 'etordera/deoplete-rails'
-  Plug 'fisadev/FixedTaskList.vim'      " Pending tasks list
+  Plug 'fisadev/FixedTaskList.vim'
   Plug 'freeo/vim-kalisi'
   Plug 'hashivim/vim-terraform'
   Plug 'honza/vim-snippets'
@@ -34,13 +32,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'juliosueiras/vim-terraform-completion'
   Plug 'kana/vim-textobj-user', { 'for': ['ruby'] }
-  Plug 'kchmck/vim-coffee-script'
   Plug 'kchmck/vim-coffee-script', { 'for': ['coffee', 'haml', 'eruby'] }
-  Plug 'majutsushi/tagbar'              " Class/module browser
-  Plug 'mfussenegger/nvim-lint'
+  Plug 'majutsushi/tagbar'
   Plug 'morhetz/gruvbox'
   Plug 'lifepillar/vim-gruvbox8'
-  " Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'aktersnurra/no-clown-fiesta.nvim'
   Plug 'sainnhe/sonokai'
   Plug 'mustache/vim-mustache-handlebars'
@@ -53,14 +48,13 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'pseewald/vim-anyfold'
   Plug 'rhysd/vim-grammarous'
   Plug 'rking/ag.vim'
-  Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }            " Project and file navigation
+  Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'slim-template/vim-slim'
   Plug 'stephpy/vim-yaml'
   Plug 'thinca/vim-localrc'
   Plug 'antoinemadec/FixCursorHold.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'antoinemadec/FixCursorHold.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'nvim-neotest/nvim-nio'
   Plug 'nvim-neotest/neotest'
@@ -74,24 +68,19 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-ruby/vim-ruby'
-  Plug 'vim-syntastic/syntastic'
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-notes'
   Plug 'declancm/cinnamon.nvim'
-  " tabs for vim
   Plug 'romgrk/barbar.nvim'
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-tree/nvim-web-devicons'
   Plug 'https://github.com/ryanoasis/vim-devicons'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
   Plug 'liuchengxu/vim-which-key'
   Plug 'luochen1990/rainbow'
-  Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   set encoding=UTF-8
 call plug#end()
 
-" colorscheme catppuccin-mocha
 colorscheme no-clown-fiesta
 set background=dark
 syntax on
@@ -101,21 +90,18 @@ let g:mapleader=' '
 
 let g:python3_host_prog = '/usr/bin/python3'
 set expandtab
-set tabstop=2 
+set tabstop=2
 set incsearch
 set hlsearch
-" set cursorline
-" set cursorcolumn
-" Enable blinking together with different cursor shapes for insert/command mode, and cursor highlighting:
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 highlight CursorLine ctermbg=235 guibg=#28303d
 highlight CursorColumn ctermbg=122 guibg=#28303d
-set nu "Отображать номеe астрок
-set sw=2 "Заменяет TAB на 2 пробела
-set sts=2 "Аналогично, но в случае автоотступа
+set nu
+set sw=2
+set sts=2
 let g:fuzzy_ignore = "gems/*"
 let g:deoplete#enable_at_startup = 1
 autocmd Filetype * AnyFoldActivate
@@ -124,7 +110,6 @@ autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_comple
 let g:anyfold_fold_comments=1
 set foldlevel=0
 
-
 " air-line
 let g:airline_powerline_fonts = 1
 
@@ -132,36 +117,21 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-" airline symbols                                                                                                                              
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
 
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
-
+let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 
-"mappings
-"map <Leader>e :NERDTreeToggle<CR>
+" mappings
 nmap <F6> :NERDTreeToggle<CR>
 map <silent> <C-h> :call WinMove('h')<CR>
 map <silent> <C-j> :call WinMove('j')<CR>
@@ -182,19 +152,12 @@ function! WinMove(key)
 endfunction
 
 let g:tagbar_ctags_bin = '/usr/bin/ctags'
-
-
-let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
-let g:airline#extensions#keymap#enabled = 0 "Не показывать текущий маппинг
-let g:Powerline_symbols='unicode' "Поддержка unicode
-let g:airline#extensions#xkblayout#enabled = 0 "Про это позже расскажу
+let g:airline#extensions#keymap#enabled = 0
+let g:airline#extensions#xkblayout#enabled = 0
 let g:airline_theme= 'deus'
 
-
-
-" let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 0 " enable folder glyph flag
+let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let g:webdevicons_conceal_nerdtree_brackets = 0
@@ -202,29 +165,13 @@ let g:webdevicons_enable_nerdtree = 0
 let g:NERDTreeGitStatusUseNerdFonts = 0
 let g:NERDTreeGitStatusConcealBrackets = 0
 let g:NERDTreeWinSize = 50
-" Basically disable nerdtree markers
 let g:NERDTreeDirArrowExpandable = ' '
 let g:NERDTreeDirArrowCollapsible = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
-
-" nerdtree git plugin begins
-"let g:NERDTreeGitStatusIndicatorMapCustom = {
-"    \ "Modified"  : "",
-"    \ "Staged"    : "",
-"    \ "Untracked" : "",
-"    \ "Renamed"   : "",
-"    \ "Unmerged"  : "",
-"    \ "Deleted"   : "",
-"   \ "Dirty"     : "",
-"   \ "Clean"     : "",
-"   \ "Unknown"   : ""
-"   \}
-" nerdtree git plugin ends
-
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' '
-let g:DevIconsDefaultFolderOpenSymbol = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' '
+let g:DevIconsDefaultFolderOpenSymbol = ' '
 
 call which_key#register('<Space>', "g:which_key_map", 'n')
 call which_key#register('<Space>', "g:which_key_map_visual", 'v')
@@ -307,20 +254,6 @@ let g:which_key_map['w'] = {
       \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
       \ }
 
-let g:which_key_map.l = {
-      \ 'name' : '+lsp',
-      \ 'f' : ['spacevim#lang#util#Format()'          , 'formatting']       ,
-      \ 'r' : ['spacevim#lang#util#FindReferences()'  , 'references']       ,
-      \ 'R' : ['spacevim#lang#util#Rename()'          , 'rename']           ,
-      \ 's' : ['spacevim#lang#util#DocumentSymbol()'  , 'document-symbol']  ,
-      \ 'S' : ['spacevim#lang#util#WorkspaceSymbol()' , 'workspace-symbol'] ,
-      \ 'g' : {
-        \ 'name': '+goto',
-        \ 'd' : ['spacevim#lang#util#Definition()'     , 'definition']      ,
-        \ 't' : ['spacevim#lang#util#TypeDefinition()' , 'type-definition'] ,
-        \ 'i' : ['spacevim#lang#util#Implementation()' , 'implementation']  ,
-        \ },
-      \ }
 let g:which_key_map['r'] = {
   \ 'name' : '+rspec',
   \ 'r' : [':Neotest run file', 'Run Nearest test in file']        ,
@@ -338,111 +271,43 @@ let g:which_key_map['r'] = {
 \}
 
 set mouse=n
-" filenames like *.xml, *.html, *.xhtml, ...
-" These are the file extensions where this plugin is enabled.
-"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
-
-" filenames like *.xml, *.xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-
-" filetypes like xml, html, xhtml, ...
-" These are the file types where this plugin is enabled.
-"
 let g:closetag_filetypes = 'html,xhtml,phtml'
-
-" filetypes like xml, xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-"
 let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-
-" integer value [0|1]
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-"
 let g:closetag_emptyTags_caseSensitive = 1
-
-" dict
-" Disables auto-close if not in a "valid" region (based on filetype)
-"
 let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
     \ 'javascript.jsx': 'jsxRegion',
     \ }
-
-" Shortcut for closing tags, default is '>'
-"
 let g:closetag_shortcut = '>'
-
-" Add > at current position without closing the current tag, default is ''
-"
 let g:closetag_close_shortcut = '<leader>>'
-let g:deoplete#enable_at_startup = 1
 
-" execute pathogen#infect()
-syntax on
-" filetype plugin indent on
-
-" Enable snipMate compatibility feature.
+" neosnippet
 let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+" ale
 let g:ale_linters = {
       \   'ruby': ['standardrb', 'rubocop'],
       \   'python': ['flake8', 'pylint'],
       \   'javascript': ['eslint'],
       \   'html': ['tidy'],
       \}
-
 let g:ale_fixers = {
       \    'ruby': ['standardrb'],
       \}
 let g:ale_fix_on_save = 1
 
-" Syntastic Config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" (Optional)Remove Info(Preview) window
 set completeopt-=preview
-
-" (Optional)Hide Info(Preview) window after completions
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" (Optional) Enable terraform plan to be include in filter
-let g:syntastic_terraform_tffilter_plan = 1
-
-" (Optional) Default: 0, enable(1)/disable(0) plugin's keymapping
 let g:terraform_completion_keys = 1
-
-" (Optional) Default: 1, enable(1)/disable(0) terraform module registry completion
 let g:terraform_registry_module_completion = 0
 
-" language servers
 set hidden
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ }
-
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-" tab options
 let g:barbar_auto_setup = v:false
 lua << EOF
   require('barbar').setup {
@@ -464,36 +329,21 @@ lua << EOF
       no_name_title = nil,
   }
 
-  require('tabnine').setup({
-  disable_auto_comment=true,
-  accept_keymap="<C-`>",
-  dismiss_keymap = "<C-]>",
-  debounce_ms = 800,
-  suggestion_color = {gui = "#808080", cterm = 244},
-  exclude_filetypes = {"TelescopePrompt", "NvimTree"},
-  log_file_path = nil, -- absolute path to Tabnine log file
-})
-
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-  -- Add a language of your choice
   ensure_installed = {"ruby","cpp", "python", "lua", "java", "javascript", "embedded_template"},
   sync_install = false,
-  ignore_install = { "" }, -- List of parsers to ignore installing
+  ignore_install = { "" },
   highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
+    enable = true,
+    disable = { "" },
     additional_vim_regex_highlighting = true,
-
   },
   indent = { enable = true, disable = { "yaml" } },
   rainbow = {
     enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
+    extended_mode = true,
+    max_file_lines = nil,
   }
 }
 require('gitsigns').setup()
@@ -502,17 +352,12 @@ require("neotest").setup({
   adapters = {
     require("neotest-rspec")({
       rspec_cmd = function()
-        return vim.tbl_flatten({
-          "bundle",
-          "exec",
-          "rspec",
-        })
+        return { "bundle", "exec", "rspec" }
       end
     }),
   },
 })
 EOF
-
 
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
@@ -556,5 +401,4 @@ let NERDTreeShowHidden = 1
 
 autocmd VimEnter * NERDTree
 
-" Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
